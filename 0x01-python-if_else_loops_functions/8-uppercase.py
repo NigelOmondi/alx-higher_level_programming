@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-def uppercase(str):
+def uppercase(s):
     result = ""
-    for c in str:
-        if ord(c) >= 97 and ord(c) <= 122:
-            result += chr(ord(c) - 32)
+    for c in s:
+        if 'a' <= c <= 'z':  # check if c is lowercase
+            result += "{}".format(chr(ord(c) - 32))
         else:
-            result += c
-    print(result)
+            result += "{}".format(c)
+    print(result)  # add a newline after the last character
