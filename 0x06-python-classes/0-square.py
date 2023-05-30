@@ -2,4 +2,4 @@
 """ Define a square module """
 class Square:
 	""" An empty square """
-		pass
+	pass
