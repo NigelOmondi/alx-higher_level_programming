@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-""" Definition of class Square """
+""" Define a class square """
 
 
 class Square:
     """
-    Defines a square with a private instance attribute called 'size'.
+    A class representing a square.
 
+    Defines a square with a private instance attribute called 'size'.
     """
 
     def __init__(self, size=0):
@@ -26,3 +27,13 @@ class Square:
             raise ValueError("size must be >= 0")
 
         self.__size = size
+
+    def area(self):
+        """
+        Calculates and returns the current square area.
+
+        Returns:
+            int: The area of the square.
+
+        """
+        return self.__size ** 2
