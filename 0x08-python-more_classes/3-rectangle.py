@@ -48,15 +48,9 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Returns a string representation of the rectangle"""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        rect_str = ""
-
-        for _ in range(self.__height):
-            rect_str += "#" * self.__width + "\n"
-        return rect_str.rstrip()
-
-    def __repr__(self):
-        """Returns a string representation of the rectangle objevt"""
-        return f"<{type(self).__name__}({self.__width}, {self.__height})>"
+        """Returns printable string representation of the rectangle"""
+        string = ""
+        if self.__width != 0 and self.__height != 0:
+            string += "\n".join("#" * self.__width
+                                for j in range(self.__height))
+        return string
