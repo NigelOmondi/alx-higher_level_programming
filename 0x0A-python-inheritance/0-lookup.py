@@ -3,4 +3,4 @@ def lookup(obj):
     """
     Returns the list of available attributes and methods of an object.
     """
-    return [attr for attr in dir(obj) if not attr.startswith('__')]
+    return dir(obj)
