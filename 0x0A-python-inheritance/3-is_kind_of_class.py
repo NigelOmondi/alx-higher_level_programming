@@ -1,6 +1,6 @@
-#!/usr/bin/ython3
+#!/usr/bin/python3
 """
-Contains the is_kind_of_class function
+Defines the is_kind_of_class function
 """
 
 
