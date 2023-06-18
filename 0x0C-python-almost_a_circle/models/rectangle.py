@@ -178,26 +178,45 @@ class Rectangle(Base):
         """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Updates the attributes of the Rectangle instance based on the arguments provided.
 
         Args:
             *args: Variable length arguments.
-                The order of the arguments is important and should be as follows:
+                Positional arguments used to update attributes in the following order:
                 - 1st argument: id attribute
                 - 2nd argument: width attribute
                 - 3rd argument: height attribute
                 - 4th argument: x attribute
                 - 5th argument: y attribute
+            **kwargs: Keyword arguments.
+                Key-value pairs used to update attributes. The key represents the attribute name.
+
+        Raises:
+            TypeError: If any of the keyword values are not integers.
+            ValueError: If any of the width, height, x, or y values are less than or equal to 0.
         """
-        if len(args) > 0:
-            self.id = args[0]
-        if len(args) > 1:
-            self.width = args[1]
-        if len(args) > 2:
-            self.height = args[2]
-        if len(args) > 3:
-            self.x = args[3]
-        if len(args) > 4:
-            self.y = args[4]
+        if args:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.width = args[1]
+            if len(args) > 2:
+                self.height = args[2]
+            if len(args) > 3:
+                self.x = args[3]
+            if len(args) > 4:
+                self.y = args[4]
+        else:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                elif key == 'width':
+                    self.width = value
+                elif key == 'height':
+                    self.height = value
+                elif key == 'x':
+                    self.x = value
+                elif key == 'y':
+                    self.y = value
