@@ -161,10 +161,13 @@ class Rectangle(Base):
 
     def display(self):
         """
-        Prints the Rectangle instance with the character '#' in stdout.
+        Prints the Rectangle instance with the character '#' in stdout,
+        taking into account the position (x, y) of the rectangle.
         """
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            print('#' * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """
