@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Define a rectangle"""
 
 
 from models.base import Base
