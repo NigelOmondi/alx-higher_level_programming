@@ -2,6 +2,9 @@
 """Define class base"""
 
 
+import json
+
+
 class Base:
     """
     Base class for other classes in the project.
@@ -90,3 +93,20 @@ class Base:
             dummy = None
         dummy.update(**dictionary)  # Use update method to set the attributes
         return (dummy)
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances loaded from a JSON file.
+
+        Returns:
+            list: A list of instances loaded from the JSON file.
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as file:
+                json_str = file.read()
+                obj_dicts = cls.from_json_string(json_str)
+                return [cls.create(**obj_dict) for obj_dict in obj_dicts]
+        except FileNotFoundError:
+            return []
