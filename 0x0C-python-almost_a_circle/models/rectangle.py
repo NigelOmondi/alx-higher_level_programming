@@ -4,6 +4,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """
     Rectangle class that inherits from the Base class.
@@ -22,12 +23,16 @@ class Rectangle(Base):
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
-            x (int, optional): The x-coordinate of the rectangle's position. Defaults to 0.
-            y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
-            id (int, optional): The identifier for the object. Defaults to None.
+            x (int, optional): The x-coordinate of the rectangle's position.
+                               Defaults to 0.
+            y (int, optional): The y-coordinate of the rectangle's position.
+                               Defaults to 0.
+            id (int, optional): The identifier for the object.
+                                Defaults to None.
 
         Raises:
-            TypeError: If the width, height, x, or y arguments are not integers.
+            TypeError: If the width, height, x, or y
+            arguments are not integers.
             ValueError: If the width or height is less than or equal to 0,
                         or if the x or y is less than 0.
         """
@@ -158,8 +163,6 @@ class Rectangle(Base):
         """
         return self.width * self.height
 
-
-
     def display(self):
         """
         Prints the Rectangle instance with the character '#' in stdout,
@@ -177,26 +180,31 @@ class Rectangle(Base):
         Returns:
             str: The string representation of the rectangle.
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id})\
+ {self.x}/{self.y} - {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
         """
-        Updates the attributes of the Rectangle instance based on the arguments provided.
+        Updates the attributes of the Rectangle instance
+        based on the arguments provided.
 
         Args:
             *args: Variable length arguments.
-                Positional arguments used to update attributes in the following order:
+                Positional arguments used to update attributes
+                in the following order:
                 - 1st argument: id attribute
                 - 2nd argument: width attribute
                 - 3rd argument: height attribute
                 - 4th argument: x attribute
                 - 5th argument: y attribute
             **kwargs: Keyword arguments.
-                Key-value pairs used to update attributes. The key represents the attribute name.
+                Key-value pairs used to update attributes.
+                The key represents the attribute name.
 
         Raises:
             TypeError: If any of the keyword values are not integers.
-            ValueError: If any of the width, height, x, or y values are less than or equal to 0.
+            ValueError: If any of the width, height, x, or y
+            values are less than or equal to 0.
         """
         if args:
             if len(args) > 0:

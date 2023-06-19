@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -20,7 +21,8 @@ class Base:
         Initializes a new instance of the Base class.
 
         Args:
-            id (int, optional): The identifier for the object. Defaults to None.
+            id (int, optional): The identifier for the object.
+                                Defaults to None.
         """
         if id is not None:
             self.id = id
@@ -86,13 +88,15 @@ class Base:
             object: An instance of the class with the attributes set.
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)  # Create a dummy instance with minimum required attributes
+            dummy = cls(1, 1)  # Create a dummy instance with minimum
+# required attributes
         elif cls.__name__ == "Square":
-            dummy = cls(1)  # Create a dummy instance with minimum required attributes
+            dummy = cls(1)  # Create a dummy instance with minimum
+# required attributes
         else:
             dummy = None
         dummy.update(**dictionary)  # Use update method to set the attributes
-        return (dummy)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
@@ -114,7 +118,7 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
-        Serializes a list of objects to CSV file
+        Serializes a list of objects to CSV file.
         """
         filename = cls.__name__ + ".csv"
         with open(filename, mode='w', newline='') as file:
@@ -124,12 +128,10 @@ class Base:
                     obj_data = obj.to_csv()
                     writer.writerow(obj_data)
 
-
-
     @classmethod
     def load_from_file_csv(cls):
         """
-        Deserializes objects from CSV file
+        Deserializes objects from CSV file.
         """
         filename = cls.__name__ + ".csv"
         try:

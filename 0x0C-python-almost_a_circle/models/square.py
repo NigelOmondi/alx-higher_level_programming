@@ -3,6 +3,7 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """
     Square class that inherits from the Rectangle class.
@@ -19,9 +20,12 @@ class Square(Rectangle):
 
         Args:
             size (int): The size of the square.
-            x (int, optional): The x-coordinate of the square's position. Defaults to 0.
-            y (int, optional): The y-coordinate of the square's position. Defaults to 0.
-            id (int, optional): The identifier for the object. Defaults to None.
+            x (int, optional): The x-coordinate of the square's position.
+                               Defaults to 0.
+            y (int, optional): The y-coordinate of the square's position.
+                               Defaults to 0.
+            id (int, optional): The identifier for the object.
+                                Defaults to None.
 
         Raises:
             TypeError: If the size, x, or y arguments are not integers.
