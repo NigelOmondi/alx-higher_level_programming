@@ -2,9 +2,6 @@
 """Define class base"""
 
 
-import json
-
-
 class Base:
     """
     Base class for other classes in the project.
@@ -72,3 +69,24 @@ class Base:
         """
         if json_string is None or len(json_string) == 0:
             return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns an instance with all attributes already set.
+
+        Args:
+            **dictionary: The attribute-value pairs for the instance.
+
+        Returns:
+            object: An instance of the class with the attributes set.
+        """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)  # Create a dummy instance with minimum required attributes
+        elif cls.__name__ == "Square":
+            dummy = cls(1)  # Create a dummy instance with minimum required attributes
+        else:
+            dummy = None
+        dummy.update(**dictionary)  # Use update method to set the attributes
+        return (dummy)
