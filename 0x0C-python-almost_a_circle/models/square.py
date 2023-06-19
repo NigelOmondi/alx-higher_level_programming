@@ -29,30 +29,32 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
-    @property
-    def size(self):
+    def update(self, *args, **kwargs):
         """
-        Getter for the size attribute.
-
-        Returns:
-            int: The size of the square.
-        """
-        return self.width
-
-    @size.setter
-    def size(self, value):
-        """
-        Setter for the size attribute.
+        Assigns attributes to the Square instance based on *args and **kwargs.
 
         Args:
-            value (int): The size to set.
-
-        Raises:
-            TypeError: If the value is not an integer.
-            ValueError: If the value is less than or equal to 0.
+            *args: List of arguments.
+            **kwargs: Dictionary of keyword arguments.
         """
-        self.width = value
-        self.height = value
+        if args:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.size = args[1]
+            if len(args) > 2:
+                self.x = args[2]
+            if len(args) > 3:
+                self.y = args[3]
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
 
     def __str__(self):
         """
