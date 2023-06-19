@@ -3,7 +3,6 @@
 
 from models.rectangle import Rectangle
 
-
 class Square(Rectangle):
     """
     Square class that inherits from the Rectangle class.
@@ -30,6 +29,31 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """
+        Getter for the size attribute.
+
+        Returns:
+            int: The size of the square.
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        Setter for the size attribute.
+
+        Args:
+            value (int): The size to set.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
+        """
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """
         Returns a string representation of the Square instance.
@@ -38,5 +62,3 @@ class Square(Rectangle):
             str: The string representation of the square.
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
-    # No need to redefine the area() and display() methods as they are inherited from the Rectangle class
