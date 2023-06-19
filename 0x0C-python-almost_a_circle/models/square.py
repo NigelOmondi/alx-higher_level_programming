@@ -64,3 +64,18 @@ class Square(Rectangle):
             str: The string representation of the square.
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Rectangle.
+
+        Returns:
+            dict: The dictionary representation of the rectangle.
+        """
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
