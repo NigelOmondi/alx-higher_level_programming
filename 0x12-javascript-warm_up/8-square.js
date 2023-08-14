@@ -8,7 +8,7 @@ if (!parseInt(x)) {
     let size = 0;
     let mySquare = '';
 
-    while (y < x) {
+    while (size < x) {
       mySquare = mySquare + 'X';
       size++;
     }
