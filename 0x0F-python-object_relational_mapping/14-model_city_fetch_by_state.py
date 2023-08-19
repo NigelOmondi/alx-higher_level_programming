@@ -2,11 +2,10 @@
 
 '''
 Write a Python file similar to model_state.py
-named model_city.py that contains the class definition of a City.
+named model_city.py that contains the
+class definition of a City.
 
-You must use the module SQLAlchemy
-
-Next, write a script 14-model_city_fetch_by_state.py that
+Write a script 14-model_city_fetch_by_state.py that
 prints all City objects from the database hbtn_0e_14_usa:
 
 Your script should take 3 arguments:
