@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
 '''
-A script that takes in arguments and displays all values 
-in the states table of hbtn_0e_0_usa where name matches 
-the argument.
+A script that takes in arguments 
+and displays all values 
+in the states table of hbtn_0e_0_usa 
+where name matches the argument.
 This script should be safe from MySQL injections!
 '''
 
