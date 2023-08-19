@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+"""
+Lists all State objects and corresponding 
+City objects contained in the database.:wq
 
-'''
-List all State objects and corresponding City objects contained in the database;
-'''
-
+"""
 import sys
 from relationship_state import Base, State
 from relationship_city import City
