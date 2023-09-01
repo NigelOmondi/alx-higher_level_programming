@@ -2,7 +2,7 @@
 """Manage HTTPError exception and print error code"""
 
 import sys
-import urrlib.request
+import urllib.request
 import urllib.error
 
 if __name__ == "__main__":
