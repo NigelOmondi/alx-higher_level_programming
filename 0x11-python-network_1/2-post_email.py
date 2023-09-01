@@ -13,7 +13,7 @@ if __name__ == "__main__":
     email = sys.argv[2]
 
     # Create a dictionary with email parameter
-    data = urllib.parse.urlencode({'email': email}).encode('ascii')
+    data = urllib.parse.urlencode({'email': email}).encode('utf-8')
 
     try:
         with urllib.request.urlopen(url, data=data) as response:
