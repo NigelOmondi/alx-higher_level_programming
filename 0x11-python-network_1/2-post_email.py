@@ -18,7 +18,6 @@ if __name__ == "__main__":
     try:
         with urllib.request.urlopen(url, data=data) as response:
             body = response.read().decode('utf-8')
-            print("Your email is:", email)
             print(body)
     except urllib.error.URLError as e:
         print(f"Error sending POST request: {e}")
