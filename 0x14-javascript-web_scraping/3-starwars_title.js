@@ -8,7 +8,6 @@ const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 request(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
-    return;
   }
 
   if (response.statusCode === 200) {
